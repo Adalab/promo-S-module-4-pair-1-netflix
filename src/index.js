@@ -11,3 +11,6 @@ const serverPort = 4000;
 server.listen(serverPort, () => {
   console.log(`Server listening at http://localhost:${serverPort}`);
 });
+server.get("/"), function (req,res) {
+  res.
+});
