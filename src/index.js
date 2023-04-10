@@ -48,7 +48,17 @@ mysql
 
 // routas de express
 server.get("/movies", (req, res) => {
+  console.log("muestranos las peliculas");
+  const genreFilterParam = req.query.genre;
+
   let sql = "SELECT * FROM movies";
+
+  if (genreFilterParam === "") {
+    sql = "SELECT * FROM movies";
+  } else {
+    sql = `SELECT * FROM movies WHERE genre=${genreFilterParam}`;
+  }
+
   connection
     .query(sql)
     .then(([results, fields]) => {
