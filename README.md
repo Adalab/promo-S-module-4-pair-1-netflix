@@ -44,7 +44,7 @@ Por favor marca a continuación los ejercicios que hayáis terminado:
 
 **4.7 Express JS III:**
 
-- [ ] 1. Servidor de estáticos para React
+- [x] 1. Servidor de estáticos para React
 - [ ] 2. Servidor de estáticos para las fotos
 - [ ] 3. Crea un motor de plantillas
 
@@ -56,19 +56,19 @@ Por favor marca a continuación los ejercicios que hayáis terminado:
 
 **4.8 Mongo I:**
 
-- [ ] 1. Configura MongoDB Atlas
-- [ ] 2. Crea la bases de datos Netflix
+- [x] 1. Configura MongoDB Atlas
+- [x] 2. Crea la bases de datos Netflix
 
 **4.9 Mongo II:**
 
-- [ ] 1. Conexión con la bases de datos de MongoDB
-- [ ] 2. Modelos para las colecciones
+- [x] 1. Conexión con la bases de datos de MongoDB
+- [x] 2. Modelos para las colecciones
 - [ ] 3. Listado de películas
 - [ ] 4. Ordena por nombre
 
 **4.10 Mongo III:**
 
-- [ ] 1. Insertar Películas favoritas
+- [x] 1. Insertar Películas favoritas
 - [ ] 3. Obtener Películas favoritas
 
 **4.11 Docker:**
