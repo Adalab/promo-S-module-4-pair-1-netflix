@@ -2,19 +2,23 @@ const express = require("express");
 const cors = require("cors");
 const mysql = require("mysql2/promise");
 
+// conectamos con MongoDB
 const dbConnect = require("../config/connection");
 dbConnect();
 
 // create and config server
 const server = express();
+//configuramos el servidor  
 server.use(cors());
 server.use(express.json());
 
-// init express aplication
+// init express aplication// arrancamos el servidor en el puerto 4000
 const serverPort = 4000;
 server.listen(serverPort, () => {
   console.log(`Server listening at http://localhost:${serverPort}`);
 });
+
+
 server.get("/"),
   function (req, res) {
     res.send({
@@ -22,15 +26,15 @@ server.get("/"),
       movies: mysql,
     });
   };
-
+//variable para conectar a la base de datos
 let connection;
-
+//creamos la conexión (mysql+express)
 mysql
   .createConnection({
     host: "localhost",
     database: "Netflix",
     user: "root",
-    password: "Lucas020813.",
+    password: "",
   })
   .then((conn) => {
     connection = conn;
@@ -41,7 +45,7 @@ mysql
           `Conexión establecida con la base de datos (identificador=${connection.threadId})`
         );
       })
-      .catch((err) => {
+      .catch((err) => {  //si hay error
         console.error("Error de conexion: " + err.stack);
       });
   })
@@ -50,10 +54,11 @@ mysql
   });
 
 // routas de express
-server.get("/movies", (req, res) => {
+//buscamos por géenero con if y else
+server.get("/movies", (req, res) => { //creamos endpoints
   console.log("muestranos las peliculas");
+  //guardamos el valor del query param de género
   const genreFilterParam = req.query.genre;
-
   let sql = "SELECT * FROM movies";
 
   if (genreFilterParam === "") {
@@ -70,12 +75,16 @@ server.get("/movies", (req, res) => {
         console.log(result);
       });
 
-      res.json({
+      res.json({//respuesta que envia el endpoint
         success: true,
         movies: results,
       });
     })
-    .catch((err) => {
+    .catch((err) => { //si hay error al hacer la peticion
       throw err;
     });
 });
+//endpoint del Login
+
+const staticServerPathWeb = './src/public-react'; // En esta carpeta ponemos los ficheros estáticos
+server.use(express.static(staticServerPathWeb));
