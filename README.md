@@ -73,7 +73,7 @@ Por favor marca a continuación los ejercicios que hayáis terminado:
 
 **4.11 Docker:**
 
-- [ ] 1. Crea un dockerfile
+- [x] 1. Crea un dockerfile
 - [ ] 2. Crea el `dockerignore`
 - [ ] 3. Crea un contenedor
 

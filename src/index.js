@@ -18,14 +18,6 @@ server.listen(serverPort, () => {
   console.log(`Server listening at http://localhost:${serverPort}`);
 });
 
-
-server.get("/"),
-  function (req, res) {
-    res.send({
-      success: true,
-      movies: mysql,
-    });
-  };
 //variable para conectar a la base de datos
 let connection;
 //creamos la conexión (mysql+express)
